@@ -1323,6 +1323,57 @@ main:focus { outline: none; }
 }
 
 /* ────────────────────────────────────────────────────────────
+   印刷用スタイル (PDF保存・印刷時)
+   ──────────────────────────────────────────────────────────── */
+@media print {
+  .site-header, .site-footer, .floating-cta, .back-to-top,
+  .scroll-indicator, .breadcrumbs, .nav-toggle, .skip-link {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .hero, .page-hero, .section {
+    background: white !important;
+    color: black !important;
+    padding: 16px 0 !important;
+    page-break-inside: avoid;
+  }
+  .hero-title, .page-hero-title, .section-title,
+  .service-title, .course-title, .greeting-headline,
+  .greeting-name, .news-item-title {
+    color: black !important;
+  }
+  .hero-lede, .greeting-body, .service-body, .course-body,
+  .info-table th, .info-table td {
+    color: #333 !important;
+  }
+  .accent-teal, .usp-num, .greeting-role { color: #1E867C !important; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+  a[href^="#"]::after, a[href^="javascript:"]::after { content: ""; }
+  .cta-pill, .cta-band { display: none !important; }
+}
+
+/* ────────────────────────────────────────────────────────────
+   フォーム送信ステータスメッセージ (mailto: 起動後の案内)
+   ──────────────────────────────────────────────────────────── */
+.form-status {
+  display: none;
+  background: rgba(38, 166, 154, 0.10);
+  border: 1px solid var(--teal);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-top: 16px;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-1);
+}
+.form-status.is-visible { display: block; }
+.form-status strong { color: var(--teal); }
+
+/* ────────────────────────────────────────────────────────────
    404
    ──────────────────────────────────────────────────────────── */
 .not-found-code {

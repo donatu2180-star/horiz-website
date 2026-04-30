@@ -105,6 +105,20 @@ JSONLD_ORGANIZATION = '''<script type="application/ld+json">
 
 SITE_JS = '''<script>
 (function () {
+  // ────── 旧Hostinger版のService Worker / Cache Storage を一括解除 ──────
+  // Hostinger Builder製のサイトはPWA化のためSWを登録していたため、
+  // URLバー直打ちで古いキャッシュが返る問題が発生する。これを掃除する。
+  if ('serviceWorker' in navigator && navigator.serviceWorker.getRegistrations) {
+    navigator.serviceWorker.getRegistrations().then(function (regs) {
+      regs.forEach(function (r) { try { r.unregister(); } catch (e) {} });
+    }).catch(function () {});
+  }
+  if (typeof caches !== 'undefined' && caches.keys) {
+    caches.keys().then(function (keys) {
+      keys.forEach(function (k) { try { caches.delete(k); } catch (e) {} });
+    }).catch(function () {});
+  }
+
   // ────── ヘッダー / Back-to-Top / Floating CTA をスクロールで切り替え ──────
   var header = document.querySelector('.site-header');
   var backTop = document.querySelector('.back-to-top');
@@ -209,6 +223,9 @@ SITE_JS = '''<script>
         'お問い合わせ内容:\\n' + msg + '\\n';
       var to = 'ryuki.izumi@horiz-ai.com';
       window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      // ステータスメッセージ表示
+      var status = form.querySelector('.form-status');
+      if (status) status.classList.add('is-visible');
     });
   }
 })();
@@ -361,6 +378,10 @@ def contact_form():
         <textarea id="message" name="message" rows="5" placeholder="なんでもお気軽にご連絡下さい。" required></textarea>
       </div>
       <button class="form-submit" type="submit">送信</button>
+      <div class="form-status" role="status" aria-live="polite">
+        <strong>メールアプリを開きました。</strong> 内容を確認のうえ送信してください。<br>
+        メールアプリが起動しない場合は、お手数ですが <a href="mailto:ryuki.izumi@horiz-ai.com">ryuki.izumi@horiz-ai.com</a> 宛にお送りください。
+      </div>
     </form>
   </div>
 </section>'''
