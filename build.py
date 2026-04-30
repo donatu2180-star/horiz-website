@@ -315,8 +315,7 @@ SITE_JS = '''<script>
         'メールアドレス: ' + email + '\\n\\n' +
         'お問い合わせ内容:\\n' + msg + '\\n';
       var to = 'horiz.hokudai@gmail.com';
-      var cc = 'ryuki.izumi@horiz-ai.com';
-      window.location.href = 'mailto:' + to + '?cc=' + encodeURIComponent(cc) + '&subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       // ステータスメッセージ表示
       var status = form.querySelector('.form-status');
       if (status) status.classList.add('is-visible');
