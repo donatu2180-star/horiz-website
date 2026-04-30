@@ -1,99 +1,234 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQ — 株式会社horiz</title>
-<meta name="description" content="よくあるご質問。DX、AI、生成AI、企業研修、補助金、PoCについて。">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+// WebP サポート検出 — 検出できたら <html> に webp-supported クラスを付与
+(function () {
+  var img = new Image();
+  img.onload = img.onerror = function () {
+    if (img.height === 2) document.documentElement.classList.add('webp-supported');
+  };
+  img.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+})();
+</script>
+<title>FAQ | 株式会社horiz</title>
+<meta name="description" content="AI/DX法人研修・コンサルティング・システム開発に関するよくある質問。費用、期間、補助金、PoC、契約フローなど。">
+<link rel="canonical" href="https://horiz-ai.com/faq/">
+<link rel="icon" href="/assets/images/icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="FAQ | 株式会社horiz">
+<meta property="og:description" content="AI/DX法人研修・コンサルティング・システム開発に関するよくある質問。費用、期間、補助金、PoC、契約フローなど。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://horiz-ai.com/faq/">
+<meta property="og:image" content="https://horiz-ai.com/assets/images/home_hero.png">
+<meta property="og:site_name" content="株式会社horiz">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ | 株式会社horiz">
+<meta name="twitter:description" content="AI/DX法人研修・コンサルティング・システム開発に関するよくある質問。費用、期間、補助金、PoC、契約フローなど。">
+<meta name="twitter:image" content="https://horiz-ai.com/assets/images/home_hero.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css?v=1777520274">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "株式会社horiz",
+  "alternateName": "horiz",
+  "url": "https://horiz-ai.com",
+  "logo": "https://horiz-ai.com/assets/images/logo_white.png",
+  "description": "AI・DX領域に特化したテクノロジー企業。深層学習や画像処理を専門とする博士課程の学生により設立。法人研修、コンサルティング、システム開発の3本柱。",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "北海道",
+    "addressLocality": "札幌市",
+    "addressCountry": "JP"
+  },
+  "sameAs": []
+}
+</script>
 </head>
-<body>
+<body class="page-inner">
+<a class="skip-link" href="#main">本文へスキップ</a>
 
 <header class="site-header">
-  <nav class="nav">
-    <a href="../index.html" class="brand">
-      <img src="../assets/images/logo_white.png" alt="horiz" class="brand-logo">
+  <div class="header-inner">
+    <a class="brand" href="/">
+      <img src="/assets/images/logo_white.png" alt="horiz — Innovate beyond horizons" class="brand-mark">
     </a>
-    <ul class="nav-links">
-      <li><a href="../about/">会社概要</a></li>
-      <li><a href="../training/">企業研修</a></li>
-      <li><a href="../consulting/">AI/DXコンサル</a></li>
-      <li><a href="../development/">システム開発</a></li>
-      <li><a href="../news/">お知らせ</a></li>
-      <li><a href="../faq/" class="active">FAQ</a></li>
-    </ul>
-    <a href="../contact/" class="nav-cta">無料相談 →</a>
-  </nav>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="primary-nav" id="primaryNav">
+      <ul class="nav-list"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about/">会社概要</a></li><li class="nav-item has-dropdown">  <span class="nav-link">事業内容<span class="caret">▾</span></span>  <div class="nav-dropdown"><a class="nav-sub-item" href="/training/">企業研修</a><a class="nav-sub-item" href="/consulting/">AI/DXコンサルティング</a><a class="nav-sub-item" href="/development/">システム開発</a></div></li><li class="nav-item"><a class="nav-link" href="/news/">お知らせ</a></li><li class="nav-item"><a class="nav-link" href="/contact/">お問い合わせ</a></li><li class="nav-item is-active"><a class="nav-link" href="/faq/">FAQ</a></li></ul>
+    </nav>
+  </div>
 </header>
-
-<main>
-
-<section class="page-hero">
+<main id="main" tabindex="-1">
+<nav class="breadcrumbs" aria-label="パンくずリスト"><ol class="crumb-list"><li class="crumb"><a href="/">Home</a></li><li class="crumb crumb-current" aria-current="page">FAQ</li></ol></nav><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://horiz-ai.com/"}, {"@type": "ListItem", "position": 2, "name": "FAQ"}]}</script>
+<section class="page-hero page-hero-plain">
   <div class="container">
-    <div class="breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span>FAQ</div>
-    <div class="eyebrow"><span class="num">— FAQ</span><span class="bar"></span><span>Frequently Asked</span></div>
-    <h1>よくあるご<em>質問</em></h1>
-    <p class="lede">DX、AI、生成AI、研修、補助金、PoCについて。掲載のないご質問はお気軽にお問い合わせください。</p>
+    <h1 class="page-hero-title">FAQ</h1>
   </div>
 </section>
 
-<section class="section">
+<section class="section section-faq">
   <div class="container narrow">
-    <div class="faq-cat" style="margin-top:64px;"><div style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px;">— Strategy</div><div class="faq-list"><details class="faq-item"><summary class="faq-summary"><span class="faq-q-mark">Q</span><span class="faq-q-text">DXとAI導入の違いは？どちらから始めるべき？</span><span class="faq-toggle"></span></summary><div class="faq-a">DX で業務とデータ基盤を整え、次に AI を組み込みましょう。データなしで AI を入れても精度が出ず ROI が悪化します。DX 現状診断を無料で実施するのでお問い合わせください。</div></details><details class="faq-item"><summary class="faq-summary"><span class="faq-q-mark">Q</span><span class="faq-q-text">社内 DX 推進チームの立ち上げ支援はありますか？</span><span class="faq-toggle"></span></summary><div class="faq-a">役員向けワークショップと現場研修をセットで提供。半年で KPI 設定から初期 PoC 実行まで伴走します。DXコンサルのページからご連絡ください。</div></details><details class="faq-item"><summary class="faq-summary"><span class="faq-q-mark">Q</span><span class="faq-q-text">生成AI を社内利用するときのセキュリティ対策は？</span><span class="faq-toggle"></span></summary><div class="faq-a">専用クラウドかオンプレミスでモデルを隔離してください。外部 API に機密データを送ると情報漏えいリスクが高まります。セキュリティ評価シートと社内ガイドライン雛形を提供します。</div></details></div></div><div class="faq-cat" style="margin-top:64px;"><div style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px;">— Training</div><div class="faq-list"><details class="faq-item"><summary class="faq-summary"><span class="faq-q-mark">Q</span><span class="faq-q-text">企業研修を完全オンラインで受講できる？</span><span class="faq-toggle"></span></summary><div class="faq-a">はい、Zoom とブラウザ演習環境で全国対応します。企業研修の日程調整はお問い合わせフォームから。</div></details><details class="faq-item"><summary class="faq-summary"><span class="faq-q-mark">Q</span><span class="faq-q-text">企業研修の費用はどれくらいかかる？</span><span class="faq-toggle"></span></summary><div class="faq-a">AI/DX基礎研修は 55,000円（2 時間）からです。カスタムコースは人数と日数（到達目標や内容）で変動します。具体的な御見積は企業研修ページ経由でご依頼ください。</div></details></div></div><div class="faq-cat" style="margin-top:64px;"><div style="font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px;">— Subsidy & Contract</div><div class="faq-list"><details class="faq-item"><summary class="faq-summary"><span class="faq-q-mark">Q</span><span class="faq-q-text">DX 補助金 2025 を活用して導入できますか？</span><span class="faq-toggle"></span></summary><div class="faq-a">厚生労働省の「人材開発支援助成金」の申請を代行します。応募要件等を確認しますので、まずはご相談ください。</div></details><details class="faq-item"><summary class="faq-summary"><span class="faq-q-mark">Q</span><span class="faq-q-text">システム開発のPoC は期間と予算はどのくらい？</span><span class="faq-toggle"></span></summary><div class="faq-a">画像認識 PoC は 4〜6 週間・80〜150 万円が目安です。データ準備済みであれば、期間を短縮できます。案件内容によっても異なりますので、ご相談ください。</div></details><details class="faq-item"><summary class="faq-summary"><span class="faq-q-mark">Q</span><span class="faq-q-text">契約までの流れを教えてください。</span><span class="faq-toggle"></span></summary><div class="faq-a">無料相談 → ご提案 → 見積 → 契約の 4 ステップです。小規模案件は最短 2 週間で着手できます。まずお問い合わせページから面談可能な日時をご連絡ください。</div></details></div></div>
+    <div class="faq-list"><details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q.</span><span>DXとAI導入の違いは？どちらから始めるべき？</span></summary><div class="faq-a"><span class="faq-a-mark">A.</span><p>DX で業務とデータ基盤を整え、次に AI を組み込みましょう。データなしで AI を入れても精度が出ず ROI が悪化します。DX 現状診断を無料で実施するのでお問い合わせください。</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q.</span><span>生成AI を社内利用するときのセキュリティ対策は？</span></summary><div class="faq-a"><span class="faq-a-mark">A.</span><p>専用クラウドかオンプレミスでモデルを隔離してください。外部 API に機密データを送ると情報漏えいリスクが高まります。セキュリティ評価シートと社内ガイドライン雛形を提供します。</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q.</span><span>企業研修を完全オンラインで受講できる？</span></summary><div class="faq-a"><span class="faq-a-mark">A.</span><p>はい、Zoom とブラウザ演習環境で全国対応します。企業研修の日程調整はお問い合わせフォームから。</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q.</span><span>企業研修の費用はどれくらいかかる？</span></summary><div class="faq-a"><span class="faq-a-mark">A.</span><p>AI/DX基礎研修は 55,000円（2 時間）からです。カスタムコースは人数と日数（到達目標や内容）で変動します。具体的な御見積は企業研修ページ経由でご依頼ください。</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q.</span><span>DX 補助金 2025 を活用して導入できますか？</span></summary><div class="faq-a"><span class="faq-a-mark">A.</span><p>厚生労働省の「人材開発支援助成金」の申請を代行します。応募要件等を確認しますので、まずはご相談ください。</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q.</span><span>システム開発のPoC は期間と予算はどのくらい？</span></summary><div class="faq-a"><span class="faq-a-mark">A.</span><p>画像認識 PoC は 4〜6 週間・80〜150 万円が目安です。データ準備済みであれば、期間を短縮できます。案件内容によっても異なりますので、ご相談ください。</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q.</span><span>契約までの流れを教えてください。</span></summary><div class="faq-a"><span class="faq-a-mark">A.</span><p>無料相談 → ご提案 → 見積 → 契約の 4 ステップです。小規模案件は最短 2 週間で着手できます。まずお問い合わせページから面談可能な日時をご連絡ください。</p></div></details><details class="faq-item"><summary class="faq-q"><span class="faq-q-mark">Q.</span><span>社内 DX 推進チームの立ち上げ支援はありますか？</span></summary><div class="faq-a"><span class="faq-a-mark">A.</span><p>役員向けワークショップと現場研修をセットで提供。半年で KPI 設定から初期 PoC 実行まで伴走します。DXコンサルのページからご連絡ください。</p></div></details></div>
   </div>
 </section>
 
-<section class="cta-section">
+<section class="section section-contact" id="contact">
   <div class="container">
-    <div class="cta-grid">
-      <div>
-        <div class="eyebrow"><span class="num">— 02</span><span class="bar"></span><span>Still Have Questions?</span></div>
-        <h2>他にご質問が<em>あれば</em></h2>
-        <p class="subtitle">掲載にないご質問もお気軽にお問い合わせください。</p>
-        <a href="../contact/" class="btn btn-cream">お問い合わせ <span class="arrow">→</span></a>
+    <h2 class="section-title">お問い合わせ</h2>
+    <form class="contact-form" action="#mailto" method="post">
+      <div class="form-row">
+        <label class="form-label" for="company">会社名<span class="req">*</span></label>
+        <input type="text" id="company" name="company" placeholder="株式会社horiz" required>
       </div>
-      <div class="cta-info">
-        <div class="cta-info-item"><div class="label">Based in</div><div class="value">札幌・北海道</div></div>
-        <div class="cta-info-item"><div class="label">Format</div><div class="value">オンライン／対面（札幌近郊）</div></div>
+      <div class="form-row">
+        <label class="form-label" for="name">ご担当者名<span class="req">*</span></label>
+        <input type="text" id="name" name="name" placeholder="ホライズ　太郎" required>
       </div>
-    </div>
+      <div class="form-row">
+        <label class="form-label" for="email">メールアドレス<span class="req">*</span></label>
+        <input type="email" id="email" name="email" placeholder="info@horiz.com" required>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="message">お問い合わせ内容<span class="req">*</span></label>
+        <textarea id="message" name="message" rows="5" placeholder="なんでもお気軽にご連絡下さい。" required></textarea>
+      </div>
+      <button class="form-submit" type="submit">送信</button>
+    </form>
   </div>
 </section>
-
 </main>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="brand">
-          <img src="../assets/images/logo_white.png" alt="horiz" class="brand-logo">
-        </a>
-        <p>中小企業に AI の進化を届ける。<br>DX・AI導入を、コンサルから開発・人材育成までワンストップで支援。</p>
-      </div>
-      <div class="footer-col"><div class="footer-col-title">事業内容</div><ul>
-        <li><a href="../training/">企業研修</a></li>
-        <li><a href="../consulting/">AI/DXコンサルティング</a></li>
-        <li><a href="../development/">AIシステム開発</a></li>
-      </ul></div>
-      <div class="footer-col"><div class="footer-col-title">会社</div><ul>
-        <li><a href="../about/">会社概要</a></li>
-        <li><a href="../news/">お知らせ</a></li>
-      </ul></div>
-      <div class="footer-col"><div class="footer-col-title">サポート</div><ul>
-        <li><a href="../faq/">FAQ</a></li>
-        <li><a href="../contact/">お問い合わせ</a></li>
-      </ul></div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025. All rights reserved.</span>
-      <span>株式会社 horiz / Sapporo, Hokkaido</span>
-    </div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="copyright">© 2025. All rights reserved.</p>
   </div>
 </footer>
+<button class="back-to-top" aria-label="ページトップへ戻る" type="button"><span aria-hidden="true">↑</span></button>
+<a class="floating-cta" href="/contact/">無料相談 →</a>
+<script>
+(function () {
+  // ────── ヘッダー / Back-to-Top / Floating CTA をスクロールで切り替え ──────
+  var header = document.querySelector('.site-header');
+  var backTop = document.querySelector('.back-to-top');
+  var floatCta = document.querySelector('.floating-cta');
+  var lastScroll = -1;
+  var rafId = null;
+  function updateScrollUI() {
+    rafId = null;
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    if (y === lastScroll) return;
+    lastScroll = y;
+    if (header) {
+      if (y > 40) header.classList.add('is-scrolled');
+      else header.classList.remove('is-scrolled');
+    }
+    if (backTop) {
+      if (y > 600) backTop.classList.add('is-visible');
+      else backTop.classList.remove('is-visible');
+    }
+    if (floatCta) {
+      if (y > 400) floatCta.classList.add('is-visible');
+      else floatCta.classList.remove('is-visible');
+    }
+  }
+  window.addEventListener('scroll', function () {
+    if (rafId === null) rafId = window.requestAnimationFrame(updateScrollUI);
+  }, { passive: true });
+  updateScrollUI();
+  if (backTop) {
+    backTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
+  // ────── ハンバーガー ──────
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.primary-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      toggle.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('nav-locked', open);
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('is-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-locked');
+      });
+    });
+  }
+
+  // ────── スクロールフェードイン ──────
+  if (typeof window.IntersectionObserver === 'undefined') return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var targets = document.querySelectorAll('.section, .page-hero, .hero, .greeting-grid, .course-row, .service-tile, .flow-row, .faq-item, .news-card, .news-item');
+  targets.forEach(function (el) { el.classList.add('fade-in'); });
+  // services-grid の中の service-tile には index ベースの遅延を付与してステガード
+  document.querySelectorAll('.services-grid').forEach(function (g) {
+    g.querySelectorAll('.service-tile').forEach(function (tile, i) {
+      tile.style.transitionDelay = (i * 90) + 'ms';
+    });
+  });
+  document.querySelectorAll('.usp-grid').forEach(function (g) {
+    g.querySelectorAll('.usp-cell').forEach(function (cell, i) {
+      cell.classList.add('fade-in');
+      cell.style.transitionDelay = (i * 90) + 'ms';
+    });
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -10% 0px' });
+  targets.forEach(function (el) { io.observe(el); });
+  document.querySelectorAll('.usp-cell.fade-in').forEach(function (el) { io.observe(el); });
+  // ファーストビューは即時表示
+  setTimeout(function () {
+    document.querySelectorAll('.hero, .page-hero').forEach(function (el) { el.classList.add('is-visible'); });
+  }, 50);
+
+  // ────── お問い合わせフォームを mailto: にハイジャック (Cloudflare Pages 移行前の暫定) ──────
+  var form = document.querySelector('.contact-form');
+  if (form && form.getAttribute('action') === '#mailto') {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var get = function (name) {
+        var el = form.querySelector('[name="' + name + '"]');
+        return el ? (el.value || '').trim() : '';
+      };
+      var company = get('company'), name = get('name'), email = get('email'), msg = get('message');
+      var subject = '[horiz-ai.com お問い合わせ] ' + (company || '会社名未入力');
+      var body =
+        '会社名: ' + company + '\n' +
+        'ご担当者名: ' + name + '\n' +
+        'メールアドレス: ' + email + '\n\n' +
+        'お問い合わせ内容:\n' + msg + '\n';
+      var to = 'ryuki.izumi@horiz-ai.com';
+      window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  }
+})();
+</script>
 </body>
 </html>

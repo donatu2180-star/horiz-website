@@ -1,149 +1,243 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AIシステム開発 — 株式会社horiz</title>
-<meta name="description" content="自社独自のAIシステムを開発。画像処理や時系列データなど高い専門性。PoCから運用までワンストップで支援。">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+// WebP サポート検出 — 検出できたら <html> に webp-supported クラスを付与
+(function () {
+  var img = new Image();
+  img.onload = img.onerror = function () {
+    if (img.height === 2) document.documentElement.classList.add('webp-supported');
+  };
+  img.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+})();
+</script>
+<title>AIシステム開発（画像認識・需要予測）| 株式会社horiz</title>
+<meta name="description" content="自社独自のAIシステムを開発。画像処理や時系列データなど高い専門性を持つ博士課程出身のエンジニアが、PoCから運用までワンストップで支援。">
+<link rel="canonical" href="https://horiz-ai.com/development/">
+<link rel="icon" href="/assets/images/icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="AIシステム開発（画像認識・需要予測）| 株式会社horiz">
+<meta property="og:description" content="自社独自のAIシステムを開発。画像処理や時系列データなど高い専門性を持つ博士課程出身のエンジニアが、PoCから運用までワンストップで支援。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://horiz-ai.com/development/">
+<meta property="og:image" content="https://horiz-ai.com/assets/images/home_hero.png">
+<meta property="og:site_name" content="株式会社horiz">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AIシステム開発（画像認識・需要予測）| 株式会社horiz">
+<meta name="twitter:description" content="自社独自のAIシステムを開発。画像処理や時系列データなど高い専門性を持つ博士課程出身のエンジニアが、PoCから運用までワンストップで支援。">
+<meta name="twitter:image" content="https://horiz-ai.com/assets/images/home_hero.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css?v=1777520274">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "株式会社horiz",
+  "alternateName": "horiz",
+  "url": "https://horiz-ai.com",
+  "logo": "https://horiz-ai.com/assets/images/logo_white.png",
+  "description": "AI・DX領域に特化したテクノロジー企業。深層学習や画像処理を専門とする博士課程の学生により設立。法人研修、コンサルティング、システム開発の3本柱。",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "北海道",
+    "addressLocality": "札幌市",
+    "addressCountry": "JP"
+  },
+  "sameAs": []
+}
+</script>
 </head>
-<body>
+<body class="page-inner">
+<a class="skip-link" href="#main">本文へスキップ</a>
 
 <header class="site-header">
-  <nav class="nav">
-    <a href="../index.html" class="brand">
-      <img src="../assets/images/logo_white.png" alt="horiz" class="brand-logo">
+  <div class="header-inner">
+    <a class="brand" href="/">
+      <img src="/assets/images/logo_white.png" alt="horiz — Innovate beyond horizons" class="brand-mark">
     </a>
-    <ul class="nav-links">
-      <li><a href="../about/">会社概要</a></li>
-      <li><a href="../training/">企業研修</a></li>
-      <li><a href="../consulting/">AI/DXコンサル</a></li>
-      <li><a href="../development/" class="active">システム開発</a></li>
-      <li><a href="../news/">お知らせ</a></li>
-      <li><a href="../faq/">FAQ</a></li>
-    </ul>
-    <a href="../contact/" class="nav-cta">無料相談 →</a>
-  </nav>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="primary-nav" id="primaryNav">
+      <ul class="nav-list"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/about/">会社概要</a></li><li class="nav-item has-dropdown">  <span class="nav-link">事業内容<span class="caret">▾</span></span>  <div class="nav-dropdown"><a class="nav-sub-item" href="/training/">企業研修</a><a class="nav-sub-item" href="/consulting/">AI/DXコンサルティング</a><a class="nav-sub-item" href="/development/">システム開発</a></div></li><li class="nav-item"><a class="nav-link" href="/news/">お知らせ</a></li><li class="nav-item"><a class="nav-link" href="/contact/">お問い合わせ</a></li><li class="nav-item"><a class="nav-link" href="/faq/">FAQ</a></li></ul>
+    </nav>
+  </div>
 </header>
-
-<main>
-
-<section class="page-hero with-bg">
-  <div class="page-hero-bg"><img src="../assets/images/development_hero.jpg" alt=""></div>
+<main id="main" tabindex="-1">
+<nav class="breadcrumbs" aria-label="パンくずリスト"><ol class="crumb-list"><li class="crumb"><a href="/">Home</a></li><li class="crumb crumb-current" aria-current="page">事業内容</li><li class="crumb crumb-current" aria-current="page">システム開発</li></ol></nav><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://horiz-ai.com/"}, {"@type": "ListItem", "position": 2, "name": "事業内容"}, {"@type": "ListItem", "position": 3, "name": "システム開発"}]}</script>
+<section class="page-hero page-hero-photo bg-development">
+  <div class="page-hero-overlay"></div>
   <div class="container">
-    <div class="breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span>事業内容<span class="sep">/</span>AIシステム開発</div>
-    <div class="eyebrow"><span class="num">— SVC 03</span><span class="bar"></span><span>Development</span></div>
-    <h1>AIシステム<em>開発</em></h1>
-    <p class="lede">自社専用のチャットボットやカメラによる監視システム、データ分析など、作りたいものや解決したい課題が明確なお客様に対してソリューションを提供します。</p>
-    <div style="margin-top:40px;">
-      <a href="../contact/" class="btn btn-cream">今すぐ無料相談！ <span class="arrow">→</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="usp-section">
-  <div class="container">
+    <h1 class="page-hero-title">システム開発</h1>
     <div class="usp-grid">
-      <div class="usp-cell"><div class="usp-cell-text">自社独自のAIシステムを開発</div></div>
-      <div class="usp-cell"><div class="usp-cell-text">画像処理や時系列データなど高い専門性</div></div>
-      <div class="usp-cell"><div class="usp-cell-text">PoCから運用までワンストップで支援</div></div>
+      <div class="usp-cell"><span class="usp-num">01</span><p class="usp-text">自社独自のAIシステムを開発</p></div>
+      <div class="usp-cell"><span class="usp-num">02</span><p class="usp-text">画像処理や時系列データなど高い専門性</p></div>
+      <div class="usp-cell"><span class="usp-num">03</span><p class="usp-text">PoCから運用までワンストップで支援</p></div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="cta-band"><div class="cta-pill-wrap"><a class="cta-pill" href="/contact/">今すぐ無料相談！</a></div></section>
+
+<section class="section section-cases">
   <div class="container">
-    <div class="eyebrow"><span class="num">— 01</span><span class="bar"></span><span>Case Studies</span></div>
-    <h2 class="section-title">AI<em>導入事例</em></h2>
-
-    <div class="case">
-      <div class="case-img">
-        <span class="case-img-tag">CASE 01</span>
-        <img src="../assets/images/case_chatbot.jpg" alt="">
-      </div>
-      <div class="case-body">
-        <span class="num">Case 01 · NLP</span>
-        <h3>チャットボット</h3>
-        <p>社内ヘルプデスクやカスタマー対応に、自然言語処理を活用したチャットボットを導入。よくある質問に自動対応し、対応時間と担当者の負担を削減します。</p>
-      </div>
-    </div>
-
-    <div class="case reverse">
-      <div class="case-img">
-        <span class="case-img-tag">CASE 02</span>
-        <img src="../assets/images/case_imageproc.jpg" alt="">
-      </div>
-      <div class="case-body">
-        <span class="num">Case 02 · Computer Vision</span>
-        <h3>画像処理</h3>
-        <p>カメラ映像から人物検出や作業状態を認識するAIを導入。現場での安全管理や業務記録を自動化し、ミスの防止と品質向上を支援します。</p>
-      </div>
-    </div>
-
-    <div class="case">
-      <div class="case-img">
-        <span class="case-img-tag">CASE 03</span>
-        <img src="../assets/images/case_forecast.jpg" alt="">
-      </div>
-      <div class="case-body">
-        <span class="num">Case 03 · Forecasting</span>
-        <h3>需要予測</h3>
-        <p>販売データや気象情報をもとに、AIで需要を予測。小売・物流業界にて在庫や発注の最適化を実現し、コスト削減と売上向上を図ります。</p>
-      </div>
-    </div>
+    <h2 class="section-title">AI導入事例</h2>
+    <div class="course-list"><div class="course-row"><div class="course-image"><picture><source srcset="/assets/images/case_chatbot.webp" type="image/webp"><img src="/assets/images/case_chatbot.jpg" alt="チャットボット" loading="lazy" decoding="async"></picture></div><div class="course-text"><h3 class="course-title">チャットボット</h3><p class="course-body">社内ヘルプデスクやカスタマー対応に、自然言語処理を活用したチャットボットを導入。よくある質問に自動対応し、対応時間と担当者の負担を削減します。</p></div></div><div class="course-row"><div class="course-image"><picture><source srcset="/assets/images/case_imageproc.webp" type="image/webp"><img src="/assets/images/case_imageproc.jpg" alt="画像処理" loading="lazy" decoding="async"></picture></div><div class="course-text"><h3 class="course-title">画像処理</h3><p class="course-body">カメラ映像から人物検出や作業状態を認識するAIを導入。現場での安全管理や業務記録を自動化し、ミスの防止と品質向上を支援します。</p></div></div><div class="course-row"><div class="course-image"><picture><source srcset="/assets/images/case_forecast.webp" type="image/webp"><img src="/assets/images/case_forecast.jpg" alt="需要予測" loading="lazy" decoding="async"></picture></div><div class="course-text"><h3 class="course-title">需要予測</h3><p class="course-body">販売データや気象情報をもとに、AIで需要を予測。小売・物流業界にて在庫や発注の最適化を実現し、コスト削減と売上向上を図ります。</p></div></div></div>
   </div>
 </section>
 
-<section class="cta-section">
+<section class="section section-contact" id="contact">
   <div class="container">
-    <div class="cta-grid">
-      <div>
-        <div class="eyebrow"><span class="num">— 02</span><span class="bar"></span><span>Get Started</span></div>
-        <h2>無料<em>相談</em></h2>
-        <p class="subtitle">AIシステム開発のご相談をお気軽にどうぞ。PoCからお試しいただけます。</p>
-        <a href="../contact/" class="btn btn-cream">お問い合わせ <span class="arrow">→</span></a>
+    <h2 class="section-title">お問い合わせ</h2>
+    <form class="contact-form" action="#mailto" method="post">
+      <div class="form-row">
+        <label class="form-label" for="company">会社名<span class="req">*</span></label>
+        <input type="text" id="company" name="company" placeholder="株式会社horiz" required>
       </div>
-      <div class="cta-info">
-        <div class="cta-info-item"><div class="label">Format</div><div class="value">オンライン／対面（札幌近郊）</div></div>
+      <div class="form-row">
+        <label class="form-label" for="name">ご担当者名<span class="req">*</span></label>
+        <input type="text" id="name" name="name" placeholder="ホライズ　太郎" required>
       </div>
-    </div>
+      <div class="form-row">
+        <label class="form-label" for="email">メールアドレス<span class="req">*</span></label>
+        <input type="email" id="email" name="email" placeholder="info@horiz.com" required>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="message">お問い合わせ内容<span class="req">*</span></label>
+        <textarea id="message" name="message" rows="5" placeholder="なんでもお気軽にご連絡下さい。" required></textarea>
+      </div>
+      <button class="form-submit" type="submit">送信</button>
+    </form>
   </div>
 </section>
-
 </main>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="brand">
-          <img src="../assets/images/logo_white.png" alt="horiz" class="brand-logo">
-        </a>
-        <p>中小企業に AI の進化を届ける。<br>DX・AI導入を、コンサルから開発・人材育成までワンストップで支援。</p>
-      </div>
-      <div class="footer-col"><div class="footer-col-title">事業内容</div><ul>
-        <li><a href="../training/">企業研修</a></li>
-        <li><a href="../consulting/">AI/DXコンサルティング</a></li>
-        <li><a href="../development/">AIシステム開発</a></li>
-      </ul></div>
-      <div class="footer-col"><div class="footer-col-title">会社</div><ul>
-        <li><a href="../about/">会社概要</a></li>
-        <li><a href="../news/">お知らせ</a></li>
-      </ul></div>
-      <div class="footer-col"><div class="footer-col-title">サポート</div><ul>
-        <li><a href="../faq/">FAQ</a></li>
-        <li><a href="../contact/">お問い合わせ</a></li>
-      </ul></div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025. All rights reserved.</span>
-      <span>株式会社 horiz / Sapporo, Hokkaido</span>
-    </div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="copyright">© 2025. All rights reserved.</p>
   </div>
 </footer>
+<button class="back-to-top" aria-label="ページトップへ戻る" type="button"><span aria-hidden="true">↑</span></button>
+<a class="floating-cta" href="/contact/">無料相談 →</a>
+<script>
+(function () {
+  // ────── ヘッダー / Back-to-Top / Floating CTA をスクロールで切り替え ──────
+  var header = document.querySelector('.site-header');
+  var backTop = document.querySelector('.back-to-top');
+  var floatCta = document.querySelector('.floating-cta');
+  var lastScroll = -1;
+  var rafId = null;
+  function updateScrollUI() {
+    rafId = null;
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    if (y === lastScroll) return;
+    lastScroll = y;
+    if (header) {
+      if (y > 40) header.classList.add('is-scrolled');
+      else header.classList.remove('is-scrolled');
+    }
+    if (backTop) {
+      if (y > 600) backTop.classList.add('is-visible');
+      else backTop.classList.remove('is-visible');
+    }
+    if (floatCta) {
+      if (y > 400) floatCta.classList.add('is-visible');
+      else floatCta.classList.remove('is-visible');
+    }
+  }
+  window.addEventListener('scroll', function () {
+    if (rafId === null) rafId = window.requestAnimationFrame(updateScrollUI);
+  }, { passive: true });
+  updateScrollUI();
+  if (backTop) {
+    backTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
+  // ────── ハンバーガー ──────
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.primary-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      toggle.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('nav-locked', open);
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('is-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-locked');
+      });
+    });
+  }
+
+  // ────── スクロールフェードイン ──────
+  if (typeof window.IntersectionObserver === 'undefined') return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var targets = document.querySelectorAll('.section, .page-hero, .hero, .greeting-grid, .course-row, .service-tile, .flow-row, .faq-item, .news-card, .news-item');
+  targets.forEach(function (el) { el.classList.add('fade-in'); });
+  // services-grid の中の service-tile には index ベースの遅延を付与してステガード
+  document.querySelectorAll('.services-grid').forEach(function (g) {
+    g.querySelectorAll('.service-tile').forEach(function (tile, i) {
+      tile.style.transitionDelay = (i * 90) + 'ms';
+    });
+  });
+  document.querySelectorAll('.usp-grid').forEach(function (g) {
+    g.querySelectorAll('.usp-cell').forEach(function (cell, i) {
+      cell.classList.add('fade-in');
+      cell.style.transitionDelay = (i * 90) + 'ms';
+    });
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -10% 0px' });
+  targets.forEach(function (el) { io.observe(el); });
+  document.querySelectorAll('.usp-cell.fade-in').forEach(function (el) { io.observe(el); });
+  // ファーストビューは即時表示
+  setTimeout(function () {
+    document.querySelectorAll('.hero, .page-hero').forEach(function (el) { el.classList.add('is-visible'); });
+  }, 50);
+
+  // ────── お問い合わせフォームを mailto: にハイジャック (Cloudflare Pages 移行前の暫定) ──────
+  var form = document.querySelector('.contact-form');
+  if (form && form.getAttribute('action') === '#mailto') {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var get = function (name) {
+        var el = form.querySelector('[name="' + name + '"]');
+        return el ? (el.value || '').trim() : '';
+      };
+      var company = get('company'), name = get('name'), email = get('email'), msg = get('message');
+      var subject = '[horiz-ai.com お問い合わせ] ' + (company || '会社名未入力');
+      var body =
+        '会社名: ' + company + '\n' +
+        'ご担当者名: ' + name + '\n' +
+        'メールアドレス: ' + email + '\n\n' +
+        'お問い合わせ内容:\n' + msg + '\n';
+      var to = 'ryuki.izumi@horiz-ai.com';
+      window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  }
+})();
+</script>
 </body>
 </html>
