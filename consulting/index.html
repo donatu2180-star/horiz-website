@@ -35,30 +35,63 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://horiz-ai.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css?v=1777527543">
+<link rel="stylesheet" href="/assets/css/style.css?v=1777528000">
+
+
+<link rel="preload" as="image" href="/assets/images/consulting_hero.webp" type="image/webp" fetchpriority="high">
+
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "LocalBusiness"],
   "name": "株式会社horiz",
   "alternateName": "horiz",
   "url": "https://horiz-ai.com",
   "logo": "https://horiz-ai.com/assets/images/logo_white.png",
-  "description": "AI・DX領域に特化したテクノロジー企業。深層学習や画像処理を専門とする博士課程の学生により設立。法人研修、コンサルティング、システム開発の3本柱。",
+  "image": "https://horiz-ai.com/assets/images/home_hero.png",
+  "description": "AI・DX領域に特化したテクノロジー企業。札幌・北海道発、北大認定スタートアップ。法人研修、AI/DXコンサルティング、AIシステム開発の3本柱で中小企業をワンストップ支援。",
+  "founder": {
+    "@type": "Person",
+    "name": "西浦 翼",
+    "jobTitle": "代表取締役"
+  },
+  "foundingDate": "2025-03-10",
   "address": {
     "@type": "PostalAddress",
+    "postalCode": "001-0012",
     "addressRegion": "北海道",
-    "addressLocality": "札幌市",
+    "addressLocality": "札幌市北区",
+    "streetAddress": "北12条西1丁目",
     "addressCountry": "JP"
   },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Japan"
+  },
+  "knowsAbout": ["AI", "DX", "深層学習", "画像処理", "機械学習", "生成AI"],
   "sameAs": []
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI/DXコンサルティング",
+  "provider": {"@type": "Organization", "name": "株式会社horiz", "url": "https://horiz-ai.com"},
+  "description": "社内のDXを進め業務効率化、AI導入で課題解決、助成金で低コストに実現。IT導入補助金・ものづくり補助金の活用支援。",
+  "serviceType": "AI/DXコンサルティング",
+  "areaServed": {"@type": "Country", "name": "Japan"},
+  "offers": {"@type": "Offer", "url": "https://horiz-ai.com/consulting/", "availability": "https://schema.org/InStock"}
+}
+</script>
+
 </head>
 <body class="page-inner">
 <a class="skip-link" href="#main">本文へスキップ</a>
+<div class="scroll-progress" aria-hidden="true"></div>
 
 <header class="site-header">
   <div class="header-inner">
@@ -139,7 +172,36 @@
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <p class="copyright">© 2025. All rights reserved.</p>
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <img src="/assets/images/logo_white.png" alt="horiz" class="footer-logo">
+        <p class="footer-tagline">中小企業に AI の進化を届ける</p>
+      </div>
+      <nav class="footer-col" aria-label="フッター・ナビゲーション">
+        <h4 class="footer-heading">事業内容</h4>
+        <ul class="footer-links">
+          <li><a href="/training/">企業研修</a></li>
+          <li><a href="/consulting/">AI/DXコンサルティング</a></li>
+          <li><a href="/development/">AIシステム開発</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="フッター・会社情報">
+        <h4 class="footer-heading">会社</h4>
+        <ul class="footer-links">
+          <li><a href="/about/">会社概要</a></li>
+          <li><a href="/news/">お知らせ</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/contact/">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h4 class="footer-heading">所在地</h4>
+        <p class="footer-address">〒001-0012<br>北海道札幌市北区北12条西1丁目</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 株式会社horiz. All rights reserved.</p>
+    </div>
   </div>
 </footer>
 <button class="back-to-top" aria-label="ページトップへ戻る" type="button"><span aria-hidden="true">↑</span></button>
@@ -160,10 +222,11 @@
     }).catch(function () {});
   }
 
-  // ────── ヘッダー / Back-to-Top / Floating CTA をスクロールで切り替え ──────
+  // ────── ヘッダー / Back-to-Top / Floating CTA / スクロール進捗バー ──────
   var header = document.querySelector('.site-header');
   var backTop = document.querySelector('.back-to-top');
   var floatCta = document.querySelector('.floating-cta');
+  var progress = document.querySelector('.scroll-progress');
   var lastScroll = -1;
   var rafId = null;
   function updateScrollUI() {
@@ -182,6 +245,11 @@
     if (floatCta) {
       if (y > 400) floatCta.classList.add('is-visible');
       else floatCta.classList.remove('is-visible');
+    }
+    if (progress) {
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docH > 0 ? Math.min(100, (y / docH) * 100) : 0;
+      progress.style.transform = 'scaleX(' + (pct / 100) + ')';
     }
   }
   window.addEventListener('scroll', function () {

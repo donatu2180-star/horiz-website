@@ -35,30 +35,52 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://horiz-ai.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css?v=1777527543">
+<link rel="stylesheet" href="/assets/css/style.css?v=1777528000">
+
+
+
+
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "LocalBusiness"],
   "name": "株式会社horiz",
   "alternateName": "horiz",
   "url": "https://horiz-ai.com",
   "logo": "https://horiz-ai.com/assets/images/logo_white.png",
-  "description": "AI・DX領域に特化したテクノロジー企業。深層学習や画像処理を専門とする博士課程の学生により設立。法人研修、コンサルティング、システム開発の3本柱。",
+  "image": "https://horiz-ai.com/assets/images/home_hero.png",
+  "description": "AI・DX領域に特化したテクノロジー企業。札幌・北海道発、北大認定スタートアップ。法人研修、AI/DXコンサルティング、AIシステム開発の3本柱で中小企業をワンストップ支援。",
+  "founder": {
+    "@type": "Person",
+    "name": "西浦 翼",
+    "jobTitle": "代表取締役"
+  },
+  "foundingDate": "2025-03-10",
   "address": {
     "@type": "PostalAddress",
+    "postalCode": "001-0012",
     "addressRegion": "北海道",
-    "addressLocality": "札幌市",
+    "addressLocality": "札幌市北区",
+    "streetAddress": "北12条西1丁目",
     "addressCountry": "JP"
   },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Japan"
+  },
+  "knowsAbout": ["AI", "DX", "深層学習", "画像処理", "機械学習", "生成AI"],
   "sameAs": []
 }
 </script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "DXとAI導入の違いは？どちらから始めるべき？", "acceptedAnswer": {"@type": "Answer", "text": "DX で業務とデータ基盤を整え、次に AI を組み込みましょう。データなしで AI を入れても精度が出ず ROI が悪化します。DX 現状診断を無料で実施するのでお問い合わせください。"}}, {"@type": "Question", "name": "生成AI を社内利用するときのセキュリティ対策は？", "acceptedAnswer": {"@type": "Answer", "text": "専用クラウドかオンプレミスでモデルを隔離してください。外部 API に機密データを送ると情報漏えいリスクが高まります。セキュリティ評価シートと社内ガイドライン雛形を提供します。"}}, {"@type": "Question", "name": "企業研修を完全オンラインで受講できる？", "acceptedAnswer": {"@type": "Answer", "text": "はい、Zoom とブラウザ演習環境で全国対応します。企業研修の日程調整はお問い合わせフォームから。"}}, {"@type": "Question", "name": "企業研修の費用はどれくらいかかる？", "acceptedAnswer": {"@type": "Answer", "text": "AI/DX基礎研修は 55,000円（2 時間）からです。カスタムコースは人数と日数（到達目標や内容）で変動します。具体的な御見積は企業研修ページ経由でご依頼ください。"}}, {"@type": "Question", "name": "DX 補助金 2025 を活用して導入できますか？", "acceptedAnswer": {"@type": "Answer", "text": "厚生労働省の「人材開発支援助成金」の申請を代行します。応募要件等を確認しますので、まずはご相談ください。"}}, {"@type": "Question", "name": "システム開発のPoC は期間と予算はどのくらい？", "acceptedAnswer": {"@type": "Answer", "text": "画像認識 PoC は 4〜6 週間・80〜150 万円が目安です。データ準備済みであれば、期間を短縮できます。案件内容によっても異なりますので、ご相談ください。"}}, {"@type": "Question", "name": "契約までの流れを教えてください。", "acceptedAnswer": {"@type": "Answer", "text": "無料相談 → ご提案 → 見積 → 契約の 4 ステップです。小規模案件は最短 2 週間で着手できます。まずお問い合わせページから面談可能な日時をご連絡ください。"}}, {"@type": "Question", "name": "社内 DX 推進チームの立ち上げ支援はありますか？", "acceptedAnswer": {"@type": "Answer", "text": "役員向けワークショップと現場研修をセットで提供。半年で KPI 設定から初期 PoC 実行まで伴走します。DXコンサルのページからご連絡ください。"}}]}</script>
 </head>
 <body class="page-inner">
 <a class="skip-link" href="#main">本文へスキップ</a>
+<div class="scroll-progress" aria-hidden="true"></div>
 
 <header class="site-header">
   <div class="header-inner">
@@ -119,7 +141,36 @@
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <p class="copyright">© 2025. All rights reserved.</p>
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <img src="/assets/images/logo_white.png" alt="horiz" class="footer-logo">
+        <p class="footer-tagline">中小企業に AI の進化を届ける</p>
+      </div>
+      <nav class="footer-col" aria-label="フッター・ナビゲーション">
+        <h4 class="footer-heading">事業内容</h4>
+        <ul class="footer-links">
+          <li><a href="/training/">企業研修</a></li>
+          <li><a href="/consulting/">AI/DXコンサルティング</a></li>
+          <li><a href="/development/">AIシステム開発</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="フッター・会社情報">
+        <h4 class="footer-heading">会社</h4>
+        <ul class="footer-links">
+          <li><a href="/about/">会社概要</a></li>
+          <li><a href="/news/">お知らせ</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/contact/">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h4 class="footer-heading">所在地</h4>
+        <p class="footer-address">〒001-0012<br>北海道札幌市北区北12条西1丁目</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 株式会社horiz. All rights reserved.</p>
+    </div>
   </div>
 </footer>
 <button class="back-to-top" aria-label="ページトップへ戻る" type="button"><span aria-hidden="true">↑</span></button>
@@ -140,10 +191,11 @@
     }).catch(function () {});
   }
 
-  // ────── ヘッダー / Back-to-Top / Floating CTA をスクロールで切り替え ──────
+  // ────── ヘッダー / Back-to-Top / Floating CTA / スクロール進捗バー ──────
   var header = document.querySelector('.site-header');
   var backTop = document.querySelector('.back-to-top');
   var floatCta = document.querySelector('.floating-cta');
+  var progress = document.querySelector('.scroll-progress');
   var lastScroll = -1;
   var rafId = null;
   function updateScrollUI() {
@@ -162,6 +214,11 @@
     if (floatCta) {
       if (y > 400) floatCta.classList.add('is-visible');
       else floatCta.classList.remove('is-visible');
+    }
+    if (progress) {
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docH > 0 ? Math.min(100, (y / docH) * 100) : 0;
+      progress.style.transform = 'scaleX(' + (pct / 100) + ')';
     }
   }
   window.addEventListener('scroll', function () {

@@ -74,9 +74,42 @@ def footer():
     return '''
 <footer class="site-footer">
   <div class="footer-inner">
-    <p class="copyright">© 2025. All rights reserved.</p>
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <img src="/assets/images/logo_white.png" alt="horiz" class="footer-logo">
+        <p class="footer-tagline">中小企業に AI の進化を届ける</p>
+      </div>
+      <nav class="footer-col" aria-label="フッター・ナビゲーション">
+        <h4 class="footer-heading">事業内容</h4>
+        <ul class="footer-links">
+          <li><a href="/training/">企業研修</a></li>
+          <li><a href="/consulting/">AI/DXコンサルティング</a></li>
+          <li><a href="/development/">AIシステム開発</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="フッター・会社情報">
+        <h4 class="footer-heading">会社</h4>
+        <ul class="footer-links">
+          <li><a href="/about/">会社概要</a></li>
+          <li><a href="/news/">お知らせ</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/contact/">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h4 class="footer-heading">所在地</h4>
+        <p class="footer-address">〒001-0012<br>北海道札幌市北区北12条西1丁目</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 株式会社horiz. All rights reserved.</p>
+    </div>
   </div>
 </footer>'''
+
+
+def scroll_progress():
+    return '<div class="scroll-progress" aria-hidden="true"></div>'
 
 
 SITE_URL = "https://horiz-ai.com"
@@ -86,21 +119,75 @@ OG_IMAGE = f"{SITE_URL}/assets/images/home_hero.png"
 JSONLD_ORGANIZATION = '''<script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "LocalBusiness"],
   "name": "株式会社horiz",
   "alternateName": "horiz",
   "url": "https://horiz-ai.com",
   "logo": "https://horiz-ai.com/assets/images/logo_white.png",
-  "description": "AI・DX領域に特化したテクノロジー企業。深層学習や画像処理を専門とする博士課程の学生により設立。法人研修、コンサルティング、システム開発の3本柱。",
+  "image": "https://horiz-ai.com/assets/images/home_hero.png",
+  "description": "AI・DX領域に特化したテクノロジー企業。札幌・北海道発、北大認定スタートアップ。法人研修、AI/DXコンサルティング、AIシステム開発の3本柱で中小企業をワンストップ支援。",
+  "founder": {
+    "@type": "Person",
+    "name": "西浦 翼",
+    "jobTitle": "代表取締役"
+  },
+  "foundingDate": "2025-03-10",
   "address": {
     "@type": "PostalAddress",
+    "postalCode": "001-0012",
     "addressRegion": "北海道",
-    "addressLocality": "札幌市",
+    "addressLocality": "札幌市北区",
+    "streetAddress": "北12条西1丁目",
     "addressCountry": "JP"
   },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Japan"
+  },
+  "knowsAbout": ["AI", "DX", "深層学習", "画像処理", "機械学習", "生成AI"],
   "sameAs": []
 }
 </script>'''
+
+
+JSONLD_SERVICES = {
+    "/training/": '''<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "企業研修 (AI/DX)",
+  "provider": {"@type": "Organization", "name": "株式会社horiz", "url": "https://horiz-ai.com"},
+  "description": "生成AIを学んで社内DXを達成、社内で専門的なAI人材を育成、助成金で研修費最大75%OFF。札幌発、オンライン全国対応。",
+  "serviceType": "AI/DX法人研修",
+  "areaServed": {"@type": "Country", "name": "Japan"},
+  "offers": {"@type": "Offer", "url": "https://horiz-ai.com/training/", "availability": "https://schema.org/InStock"}
+}
+</script>''',
+    "/consulting/": '''<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI/DXコンサルティング",
+  "provider": {"@type": "Organization", "name": "株式会社horiz", "url": "https://horiz-ai.com"},
+  "description": "社内のDXを進め業務効率化、AI導入で課題解決、助成金で低コストに実現。IT導入補助金・ものづくり補助金の活用支援。",
+  "serviceType": "AI/DXコンサルティング",
+  "areaServed": {"@type": "Country", "name": "Japan"},
+  "offers": {"@type": "Offer", "url": "https://horiz-ai.com/consulting/", "availability": "https://schema.org/InStock"}
+}
+</script>''',
+    "/development/": '''<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AIシステム開発",
+  "provider": {"@type": "Organization", "name": "株式会社horiz", "url": "https://horiz-ai.com"},
+  "description": "自社独自のAIシステムを開発。画像処理や時系列データなど高い専門性。PoCから運用までワンストップで支援。",
+  "serviceType": "AIシステム開発",
+  "areaServed": {"@type": "Country", "name": "Japan"},
+  "offers": {"@type": "Offer", "url": "https://horiz-ai.com/development/", "availability": "https://schema.org/InStock"}
+}
+</script>''',
+}
 
 
 SITE_JS = '''<script>
@@ -119,10 +206,11 @@ SITE_JS = '''<script>
     }).catch(function () {});
   }
 
-  // ────── ヘッダー / Back-to-Top / Floating CTA をスクロールで切り替え ──────
+  // ────── ヘッダー / Back-to-Top / Floating CTA / スクロール進捗バー ──────
   var header = document.querySelector('.site-header');
   var backTop = document.querySelector('.back-to-top');
   var floatCta = document.querySelector('.floating-cta');
+  var progress = document.querySelector('.scroll-progress');
   var lastScroll = -1;
   var rafId = null;
   function updateScrollUI() {
@@ -141,6 +229,11 @@ SITE_JS = '''<script>
     if (floatCta) {
       if (y > 400) floatCta.classList.add('is-visible');
       else floatCta.classList.remove('is-visible');
+    }
+    if (progress) {
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docH > 0 ? Math.min(100, (y / docH) * 100) : 0;
+      progress.style.transform = 'scaleX(' + (pct / 100) + ')';
     }
   }
   window.addEventListener('scroll', function () {
@@ -232,8 +325,9 @@ SITE_JS = '''<script>
 </script>'''
 
 
-def shell(title, description, body, active, body_class="", canonical_path=None):
+def shell(title, description, body, active, body_class="", canonical_path=None, extra_jsonld=""):
     canonical = SITE_URL.rstrip("/") + (canonical_path or active or "/")
+    service_jsonld = JSONLD_SERVICES.get(active, "")
     return f'''<!doctype html>
 <html lang="ja">
 <head>
@@ -271,13 +365,21 @@ def shell(title, description, body, active, body_class="", canonical_path=None):
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://horiz-ai.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v={ASSET_VERSION}">
+{f'<link rel="preload" as="image" href="/assets/images/home_hero.webp" type="image/webp" fetchpriority="high"><link rel="preload" as="image" href="/assets/images/home_hero.png" fetchpriority="high">' if active == "/" else ""}
+{f'<link rel="preload" as="image" href="/assets/images/training_hero.webp" type="image/webp" fetchpriority="high">' if active == "/training/" else ""}
+{f'<link rel="preload" as="image" href="/assets/images/consulting_hero.webp" type="image/webp" fetchpriority="high">' if active == "/consulting/" else ""}
+{f'<link rel="preload" as="image" href="/assets/images/development_hero.webp" type="image/webp" fetchpriority="high">' if active == "/development/" else ""}
 
 {JSONLD_ORGANIZATION}
+{service_jsonld}
+{extra_jsonld}
 </head>
 <body class="{body_class}">
 <a class="skip-link" href="#main">本文へスキップ</a>
+{scroll_progress()}
 {header(active)}
 <main id="main" tabindex="-1">
 {body}
@@ -834,6 +936,17 @@ def faq():
         for q, a in qa
     )
 
+    # FAQPage JSON-LD (Google検索のリッチ結果対応)
+    import json as _json
+    faq_jsonld = '<script type="application/ld+json">' + _json.dumps({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+            for q, a in qa
+        ],
+    }, ensure_ascii=False) + "</script>"
+
     body = breadcrumbs([("Home", "/"), ("FAQ", None)]) + f'''
 <section class="page-hero page-hero-plain">
   <div class="container">
@@ -848,7 +961,7 @@ def faq():
 </section>
 ''' + contact_form()
 
-    return shell(title, description, body, "/faq/", body_class="page-inner")
+    return shell(title, description, body, "/faq/", body_class="page-inner", extra_jsonld=faq_jsonld)
 
 
 # ────────────────────────────────────────────────────────────────────────────
