@@ -531,7 +531,7 @@ def home():
       <div class="why-cell">
         <span class="why-num">01</span>
         <h3 class="why-title">研究室出身の専門性</h3>
-        <p class="why-body">代表は深層学習・画像処理を専門とする北海道大学の博士号取得者。研究の最前線で培った知見を、現場で動く形に落とし込みます。論文止まりにしない実装力。</p>
+        <p class="why-body">代表は北海道大学にて深層学習・画像処理を専門に博士号を取得。研究の最前線で培った知見を、現場で動く形に落とし込みます。論文止まりにしない実装力。</p>
       </div>
       <div class="why-cell">
         <span class="why-num">02</span>
