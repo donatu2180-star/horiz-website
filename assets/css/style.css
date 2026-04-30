@@ -276,16 +276,19 @@ html.webp-supported .bg-development { background-image: url('/assets/images/deve
   min-height: 100vh;
   min-height: 100svh;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-top: var(--header-h);
+  /* 縦方向はやや上寄せ — 画像中央の輝点ホライズンライン上にテキストが乗らないように */
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: calc(var(--header-h) + 18vh);
 }
-/* 暗いオーバーレイで文字可読性確保 */
+/* テキスト後方を集中的に暗くする — ラジアル位置をテキスト中心(38%)に合わせる */
 .hero-home::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(19,29,50,0.55) 0%, rgba(19,29,50,0.10) 60%, rgba(19,29,50,0.20) 100%);
+  background:
+    radial-gradient(ellipse 60% 38% at 50% 38%, rgba(8,14,28,0.70) 0%, rgba(8,14,28,0.38) 55%, rgba(8,14,28,0.05) 100%),
+    linear-gradient(180deg, rgba(19,29,50,0.28) 0%, rgba(19,29,50,0.04) 45%, rgba(19,29,50,0.18) 100%);
   pointer-events: none;
 }
 
@@ -293,14 +296,16 @@ html.webp-supported .bg-development { background-image: url('/assets/images/deve
   position: relative;
   width: 100%;
   max-width: 1440px;
-  padding: 0 80px 100px;
+  padding: 0 40px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .hero-text {
-  text-align: left;
-  max-width: 640px;
+  text-align: center;
+  max-width: 760px;
+  /* 文字自体にも軽くシャドウを乗せて輝点ライン上でも読めるように */
+  text-shadow: 0 2px 28px rgba(8,14,28,0.65), 0 1px 2px rgba(8,14,28,0.4);
 }
 
 .hero-title {
@@ -324,13 +329,13 @@ html.webp-supported .bg-development { background-image: url('/assets/images/deve
 }
 
 @media (max-width: 1080px) {
-  .hero-home-inner { padding: 0 40px 80px; justify-content: center; }
-  .hero-text { text-align: center; max-width: 720px; }
+  .hero-home { padding-top: calc(var(--header-h) + 14vh); }
+  .hero-home-inner { padding: 0 40px; }
   .hero-title { font-size: 52px; }
 }
 @media (max-width: 720px) {
-  .hero-home { min-height: 80vh; }
-  .hero-home-inner { padding: 0 24px 60px; }
+  .hero-home { min-height: 80vh; padding-top: calc(var(--header-h) + 10vh); }
+  .hero-home-inner { padding: 0 24px; }
   .hero-title { font-size: 36px; margin-bottom: 32px; }
   .hero-lede { font-size: 16px; }
   .hero-lede br { display: none; }
