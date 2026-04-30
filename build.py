@@ -314,8 +314,9 @@ SITE_JS = '''<script>
         'ご担当者名: ' + name + '\\n' +
         'メールアドレス: ' + email + '\\n\\n' +
         'お問い合わせ内容:\\n' + msg + '\\n';
-      var to = 'ryuki.izumi@horiz-ai.com';
-      window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      var to = 'horiz.hokudai@gmail.com';
+      var cc = 'ryuki.izumi@horiz-ai.com';
+      window.location.href = 'mailto:' + to + '?cc=' + encodeURIComponent(cc) + '&subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       // ステータスメッセージ表示
       var status = form.querySelector('.form-status');
       if (status) status.classList.add('is-visible');
@@ -482,7 +483,7 @@ def contact_form():
       <button class="form-submit" type="submit">送信</button>
       <div class="form-status" role="status" aria-live="polite">
         <strong>メールアプリを開きました。</strong> 内容を確認のうえ送信してください。<br>
-        メールアプリが起動しない場合は、お手数ですが <a href="mailto:ryuki.izumi@horiz-ai.com">ryuki.izumi@horiz-ai.com</a> 宛にお送りください。
+        メールアプリが起動しない場合は、お手数ですが <a href="mailto:horiz.hokudai@gmail.com">horiz.hokudai@gmail.com</a> 宛にお送りください。
       </div>
     </form>
   </div>
