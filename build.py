@@ -102,7 +102,7 @@ def footer():
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="copyright">© 2025 株式会社horiz. All rights reserved.</p>
+      <p class="copyright">© 2025 株式会社horiz. All rights reserved. · <a href="/privacy/" class="footer-legal-link">プライバシーポリシー</a></p>
     </div>
   </div>
 </footer>'''
@@ -519,6 +519,35 @@ def home():
       ''' + picture("logo_white.png", "horiz", "hus-horiz") + '''
       <span class="hus-x">×</span>
       ''' + picture("hus_logo.png", "HOKKAIDO UNIVERSITY START UP", "hus-img") + '''
+    </div>
+  </div>
+</section>
+
+<section class="section section-why">
+  <div class="container">
+    <h2 class="section-title">horiz が選ばれる理由</h2>
+    <p class="section-lede">大手AIベンダーでもなく、地場のSIerでもない。<br>研究の最前線と現場の課題を、北の地から接続します。</p>
+    <div class="why-grid">
+      <div class="why-cell">
+        <span class="why-num">01</span>
+        <h3 class="why-title">研究室出身の専門性</h3>
+        <p class="why-body">深層学習・画像処理を専門とする北海道大学博士課程出身のメンバーが、最先端の研究知見を実装まで持っていきます。論文止まりではない、現場で動くAI。</p>
+      </div>
+      <div class="why-cell">
+        <span class="why-num">02</span>
+        <h3 class="why-title">PoCから運用までワンストップ</h3>
+        <p class="why-body">研修だけ・コンサルだけ・開発だけの会社が多い中で、課題発見から実装・定着まで一貫してご支援。途中で別ベンダーに引き継ぐ手間がありません。</p>
+      </div>
+      <div class="why-cell">
+        <span class="why-num">03</span>
+        <h3 class="why-title">助成金活用ノウハウ</h3>
+        <p class="why-body">人材開発支援助成金（最大75%）、IT導入補助金、ものづくり補助金など、中小企業が使える制度を熟知。実質負担を最小化したご提案が可能です。</p>
+      </div>
+      <div class="why-cell">
+        <span class="why-num">04</span>
+        <h3 class="why-title">札幌・道内は対面伴走</h3>
+        <p class="why-body">全国対応のオンライン中心ですが、札幌近郊であれば現場訪問・対面研修も可能。北の地の中小企業に、じっくり寄り添う体制を整えています。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -979,6 +1008,15 @@ def contact():
     <p class="page-hero-lede">DX・AI導入のご相談を承っています。お気軽にお問い合わせください。</p>
   </div>
 </section>
+
+<section class="section section-contact-channels">
+  <div class="container narrow">
+    <p class="contact-direct">
+      フォームが上手くいかない場合は、直接メールをお送りください。<br>
+      <a class="contact-direct-mail" href="mailto:horiz.hokudai@gmail.com">horiz.hokudai@gmail.com</a>
+    </p>
+  </div>
+</section>
 ''' + contact_form()
 
     return shell(title, description, body, "/contact/", body_class="page-inner page-contact")
@@ -987,6 +1025,77 @@ def contact():
 # ────────────────────────────────────────────────────────────────────────────
 # 出力
 # ────────────────────────────────────────────────────────────────────────────
+
+def privacy():
+    title = "プライバシーポリシー | 株式会社horiz"
+    description = "株式会社horizの個人情報の取扱いに関する基本方針。お問い合わせフォームから取得する情報の利用目的、保管、第三者提供等について。"
+
+    body = breadcrumbs([("Home", "/"), ("プライバシーポリシー", None)]) + '''
+<section class="page-hero page-hero-plain">
+  <div class="container">
+    <h1 class="page-hero-title">プライバシーポリシー</h1>
+  </div>
+</section>
+
+<section class="section section-legal">
+  <div class="container narrow">
+    <p class="legal-lead">株式会社horiz（以下「当社」といいます）は、お客様の個人情報の重要性を認識し、その保護の徹底を図るため、以下のとおり個人情報の取扱いに関する基本方針を定めます。</p>
+
+    <h2 class="legal-h2">1. 個人情報の定義</h2>
+    <p>本ポリシーにおいて「個人情報」とは、個人情報の保護に関する法律（個人情報保護法）に定める個人情報を指し、氏名、会社名、メールアドレスその他特定の個人を識別できる情報をいいます。</p>
+
+    <h2 class="legal-h2">2. 取得する個人情報</h2>
+    <p>当社は、本ウェブサイトのお問い合わせフォームを通じて、以下の個人情報を取得します。</p>
+    <ul class="legal-list">
+      <li>会社名</li>
+      <li>ご担当者名</li>
+      <li>メールアドレス</li>
+      <li>お問い合わせ内容</li>
+    </ul>
+
+    <h2 class="legal-h2">3. 利用目的</h2>
+    <p>当社は取得した個人情報を、以下の目的の範囲内で利用します。</p>
+    <ul class="legal-list">
+      <li>お問い合わせへのご回答および関連連絡</li>
+      <li>当社サービス（AI/DX法人研修、コンサルティング、システム開発）に関するご案内・ご提案</li>
+      <li>サービス提供にあたり必要な業務連絡</li>
+      <li>当社サービス改善のための分析（個人を特定しない統計処理を含む）</li>
+    </ul>
+
+    <h2 class="legal-h2">4. 第三者への提供</h2>
+    <p>当社は、以下のいずれかに該当する場合を除き、お客様の個人情報を第三者に提供しません。</p>
+    <ul class="legal-list">
+      <li>お客様の同意がある場合</li>
+      <li>法令に基づく場合</li>
+      <li>人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>
+    </ul>
+
+    <h2 class="legal-h2">5. 個人情報の安全管理</h2>
+    <p>当社は、取得した個人情報の漏洩、滅失またはき損の防止その他個人情報の安全管理のため、合理的な技術的・組織的措置を講じます。</p>
+
+    <h2 class="legal-h2">6. 開示・訂正・削除等のご請求</h2>
+    <p>お客様は、当社が保有するご自身の個人情報について、開示、訂正、追加、削除、利用停止または第三者提供の停止を求めることができます。下記お問い合わせ先までご連絡ください。</p>
+
+    <h2 class="legal-h2">7. アクセス解析ツール</h2>
+    <p>本ウェブサイトでは、サービス改善および利用状況把握のため、Cloudflare Web Analytics 等のアクセス解析ツールを利用する場合があります。これらのツールはCookieを使用せず、個人を特定する情報を収集しません。</p>
+
+    <h2 class="legal-h2">8. お問い合わせ窓口</h2>
+    <p>個人情報の取扱いに関するお問い合わせは、以下までご連絡ください。</p>
+    <table class="info-table">
+      <tr><th>会社名</th><td>株式会社horiz</td></tr>
+      <tr><th>所在地</th><td>〒001-0012 北海道札幌市北区北12条西1丁目</td></tr>
+      <tr><th>連絡先</th><td><a href="mailto:horiz.hokudai@gmail.com">horiz.hokudai@gmail.com</a></td></tr>
+    </table>
+
+    <h2 class="legal-h2">9. 本ポリシーの改定</h2>
+    <p>当社は、必要に応じて本プライバシーポリシーを改定することがあります。改定後のポリシーは、本ウェブサイトに掲載した時点で効力を生じるものとします。</p>
+
+    <p class="legal-meta">制定日: 2025年3月10日<br>最終改定: 2026年4月30日</p>
+  </div>
+</section>
+'''
+    return shell(title, description, body, "/privacy/", body_class="page-inner page-legal")
+
 
 def not_found():
     title = "ページが見つかりません | 株式会社horiz"
@@ -1018,6 +1127,7 @@ PAGES = [
     ("news/index.html",       news),
     ("faq/index.html",        faq),
     ("contact/index.html",    contact),
+    ("privacy/index.html",    privacy),
     ("404.html",              not_found),
 ]
 

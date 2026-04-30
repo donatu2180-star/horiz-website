@@ -1543,6 +1543,148 @@ main:focus { outline: none; }
 .form-status strong { color: var(--teal); }
 
 /* ────────────────────────────────────────────────────────────
+   Why horiz セクション (home)
+   ──────────────────────────────────────────────────────────── */
+.section-why { background: var(--bg-1); }
+.section-why .section-lede { margin-bottom: 56px; }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px 64px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.why-cell {
+  position: relative;
+  padding-left: 0;
+  text-align: left;
+}
+.why-num {
+  font-family: var(--inter);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 12px;
+}
+.why-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--ink-1);
+  margin: 0 0 16px;
+  letter-spacing: 0.04em;
+  position: relative;
+  padding-bottom: 16px;
+}
+.why-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 32px;
+  height: 1px;
+  background: var(--teal);
+  opacity: 0.6;
+}
+.why-body {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--ink-2);
+  margin: 0;
+}
+@media (max-width: 720px) {
+  .why-grid { grid-template-columns: 1fr; gap: 36px; }
+  .why-title { font-size: 19px; }
+}
+
+/* ────────────────────────────────────────────────────────────
+   契約系ページ (privacy / terms)
+   ──────────────────────────────────────────────────────────── */
+.section-legal { background: var(--bg-1); padding-top: 56px; padding-bottom: 80px; }
+.legal-lead {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 2;
+  color: var(--ink-1);
+  margin: 0 0 48px;
+}
+.legal-h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--ink-1);
+  margin: 48px 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  letter-spacing: 0.04em;
+}
+.section-legal p {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 2;
+  color: var(--ink-2);
+  margin: 0 0 16px;
+}
+.legal-list {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 2;
+  color: var(--ink-2);
+  padding-left: 24px;
+  margin: 0 0 24px;
+}
+.legal-list li { margin-bottom: 6px; }
+.legal-meta {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-family: var(--inter);
+  font-size: 12px;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+.section-legal a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ────────────────────────────────────────────────────────────
+   フッター プライバシーリンク
+   ──────────────────────────────────────────────────────────── */
+.footer-legal-link {
+  color: var(--ink-3);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+.footer-legal-link:hover { color: var(--teal); }
+
+/* ────────────────────────────────────────────────────────────
+   Contact 直接メールバックアップ
+   ──────────────────────────────────────────────────────────── */
+.section-contact-channels { padding: 48px 0 16px; background: var(--bg-1); }
+.contact-direct {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 2;
+  color: var(--ink-2);
+  text-align: center;
+  margin: 0;
+}
+.contact-direct-mail {
+  font-family: var(--inter);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--teal);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-bottom: 1px solid var(--teal);
+  padding-bottom: 2px;
+}
+.contact-direct-mail:hover { color: var(--ink-1); border-color: var(--ink-1); }
+
+/* ────────────────────────────────────────────────────────────
    404
    ──────────────────────────────────────────────────────────── */
 .not-found-code {
