@@ -325,6 +325,8 @@ html.webp-supported .bg-development { background-image: url('/assets/images/deve
   margin: 0;
   color: var(--ink-1);
   letter-spacing: 0.02em;
+  text-wrap: pretty;
+  word-break: auto-phrase;
 }
 
 @media (max-width: 1080px) {
@@ -502,7 +504,6 @@ html.webp-supported .bg-development { background-image: url('/assets/images/deve
 .cta-pill:hover {
   background: var(--teal-2);
   color: #fff;
-  transform: translateY(-1px);
 }
 
 /* ────────────────────────────────────────────────────────────
@@ -530,6 +531,8 @@ html.webp-supported .bg-development { background-image: url('/assets/images/deve
   color: var(--ink-1);
   margin: 0 auto 48px;
   max-width: 720px;
+  text-wrap: pretty;
+  word-break: auto-phrase;
 }
 
 @media (max-width: 720px) {
@@ -555,6 +558,8 @@ html.webp-supported .bg-development { background-image: url('/assets/images/deve
   font-size: 15px;
   line-height: 1.9;
   color: var(--ink-2);
+  text-wrap: pretty;
+  word-break: auto-phrase;
 }
 .hus-lockup {
   display: flex;
@@ -571,12 +576,12 @@ html.webp-supported .bg-development { background-image: url('/assets/images/deve
   color: var(--ink-1);
   line-height: 1;
 }
-.hus-img { width: 220px; background: #fff; padding: 16px; border-radius: 4px; }
+.hus-img { width: 220px; }
 @media (max-width: 720px) {
-  .hus-horiz { width: 160px; }
-  .hus-img { width: 160px; }
-  .hus-x { font-size: 36px; }
-  .hus-lockup { gap: 20px; }
+  .hus-lockup { gap: 14px; flex-wrap: nowrap; }
+  .hus-horiz { width: 130px; }
+  .hus-img { width: 130px; }
+  .hus-x { font-size: 28px; }
 }
 
 /* ────────────────────────────────────────────────────────────
@@ -596,9 +601,7 @@ html.webp-supported .bg-development { background-image: url('/assets/images/deve
   color: var(--ink-1);
   transition: transform 0.3s cubic-bezier(.2,.7,.2,1), opacity 0.3s ease;
 }
-.service-tile:hover { color: var(--ink-1); transform: translateY(-6px); }
-.service-tile:hover .service-image { box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
-.service-tile .service-image { transition: box-shadow 0.3s ease; }
+.service-tile:hover { color: var(--ink-1); }
 .service-tile:hover .service-title { color: var(--teal); }
 .service-title { transition: color 0.2s ease; }
 
@@ -1707,6 +1710,6 @@ main:focus { outline: none; }
    News teaser hover
    ──────────────────────────────────────────────────────────── */
 .news-card { transition: transform 0.3s cubic-bezier(.2,.7,.2,1); }
-.news-card:hover { transform: translateY(-4px); }
+.news-card:hover { /* lift removed per request */ }
 .news-card:hover .news-title { color: var(--teal); }
 .news-title { transition: color 0.2s ease; }
