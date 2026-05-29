@@ -67,7 +67,8 @@ def header(active):
       <ul class="nav-list">{''.join(items)}</ul>
     </nav>
   </div>
-</header>'''
+</header>
+<div class="nav-overlay" aria-hidden="true"></div>'''
 
 
 def footer():
@@ -249,6 +250,15 @@ SITE_JS = '''<script>
   // ────── ハンバーガー ──────
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.querySelector('.primary-nav');
+  var overlay = document.querySelector('.nav-overlay');
+  function closeNav() {
+    if (nav) nav.classList.remove('is-open');
+    if (toggle) {
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    document.body.classList.remove('nav-locked');
+  }
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
       var open = nav.classList.toggle('is-open');
@@ -257,12 +267,11 @@ SITE_JS = '''<script>
       document.body.classList.toggle('nav-locked', open);
     });
     nav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        nav.classList.remove('is-open');
-        toggle.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('nav-locked');
-      });
+      a.addEventListener('click', closeNav);
+    });
+    if (overlay) overlay.addEventListener('click', closeNav);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
     });
   }
 

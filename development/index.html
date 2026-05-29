@@ -109,6 +109,7 @@
     </nav>
   </div>
 </header>
+<div class="nav-overlay" aria-hidden="true"></div>
 <main id="main" tabindex="-1">
 <nav class="breadcrumbs" aria-label="パンくずリスト"><ol class="crumb-list"><li class="crumb"><a href="/">Home</a></li><li class="crumb crumb-current" aria-current="page">事業内容</li><li class="crumb crumb-current" aria-current="page">システム開発</li></ol></nav><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://horiz-ai.com/"}, {"@type": "ListItem", "position": 2, "name": "事業内容"}, {"@type": "ListItem", "position": 3, "name": "システム開発"}]}</script>
 <section class="page-hero page-hero-photo bg-development">
@@ -257,6 +258,15 @@
   // ────── ハンバーガー ──────
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.querySelector('.primary-nav');
+  var overlay = document.querySelector('.nav-overlay');
+  function closeNav() {
+    if (nav) nav.classList.remove('is-open');
+    if (toggle) {
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    document.body.classList.remove('nav-locked');
+  }
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
       var open = nav.classList.toggle('is-open');
@@ -265,12 +275,11 @@
       document.body.classList.toggle('nav-locked', open);
     });
     nav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        nav.classList.remove('is-open');
-        toggle.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('nav-locked');
-      });
+      a.addEventListener('click', closeNav);
+    });
+    if (overlay) overlay.addEventListener('click', closeNav);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
     });
   }
 
