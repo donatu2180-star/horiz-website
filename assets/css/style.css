@@ -935,6 +935,8 @@ html.webp-supported .bg-development { background-image: url('/assets/images/deve
   line-height: 1.65;
   color: var(--ink-1);
   position: relative;
+  text-wrap: pretty;
+  word-break: auto-phrase;
 }
 .faq-q::-webkit-details-marker { display: none; }
 .faq-q::after {
